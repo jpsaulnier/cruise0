@@ -55,7 +55,7 @@ const updateUI = async () => {
     }
 
     //Fetch ageRange from the idToken
-    const user_age_range = user['http://localhost:3000/ageRange'];
+    const user_age_range = user['https://cruise0-jps.herokuapp.com/ageRange'];
     
     //Display age range is available
     if (user_age_range) {
