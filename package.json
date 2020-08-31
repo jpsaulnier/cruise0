@@ -1,0 +1,19 @@
+{
+  "name": "Cruise0",
+  "version": "1.0.0",
+  "description": "Amazing sea adventures!",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "JP Saulnier",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

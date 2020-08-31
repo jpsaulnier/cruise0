@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cruise0</title>
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  </head>
+
+  <body>
+    <h2>Cruise0</h2>
+    <p>Welcome to our page, your sea adventure starts right here!</p>
+     (PS: after this pandemic hiccup)
+    <button id="btn-login" disabled="true" onclick="login()">Log in</button>
+    <button id="btn-logout" disabled="true" onclick="logout()">Log out</button>
+      
+ <!-- Display gated content -->     
+  <div class="hidden" id="gated-content">
+    <br><hr>
+    <p>
+      Welcome to your personalized page <var id="user-name"></var>! 
+    </p>
+    <p class="error-message" id="Unverified-email"> Please verify your email address</p>
+    <label>
+        User's age range:
+        <pre id="user-age"></pre>
+    </label> 
+  </div>
+    
+     <!-- Reference to CDN Auth0 SPA Javascript SDK -->
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/1.9/auth0-spa-js.production.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
