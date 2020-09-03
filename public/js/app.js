@@ -18,11 +18,6 @@ window.onload = async () => {
   updateUI();
     const isAuthenticated = await auth0.isAuthenticated();
 
-  if (isAuthenticated) {
-    // show the gated content
-    return;
-  }
-
   // Check for the code and state parameters
   const query = window.location.search;
   if (query.includes("code=") && query.includes("state=")) {
@@ -44,6 +39,7 @@ const updateUI = async () => {
   document.getElementById("btn-login").disabled = isAuthenticated;
 
  if (isAuthenticated) {
+    // show the gated content
     const user = await auth0.getUser();
      
     document.getElementById("gated-content").classList.remove("hidden");
@@ -57,7 +53,7 @@ const updateUI = async () => {
     //Fetch ageRange from the idToken
     const user_age_range = user['https://cruise0-jps.herokuapp.com/ageRange'];
     
-    //Display age range is available
+    //Display age range if available
     if (user_age_range) {
         document.getElementById("user-age").textContent = user_age_range;
     } else {
@@ -66,6 +62,7 @@ const updateUI = async () => {
 
 
   } else {
+    // hide the gated content if user is not authenticated
     document.getElementById("gated-content").classList.add("hidden");
   }
 };
